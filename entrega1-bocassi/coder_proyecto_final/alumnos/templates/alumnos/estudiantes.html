@@ -1,0 +1,45 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+{% for msg in messages %}
+
+{{msg}}
+
+{% endfor %}
+
+<h3>
+
+
+
+<i><u>
+<h1>Algunos de nuestros usuarios:</h1>
+</u></i>
+<br>
+<a href="{% url 'curso_formulario1' %}" class="btn btn-primary">Crea tu usuario aqui!!!</a>
+<br>
+<br>
+</h3>
+
+<br>
+
+<table class="ubi-table">
+    <tbody>
+      <tr>
+        <th>
+          <strong>Nombre</strong>
+        </th>
+        <th>
+          <strong>Apellido</strong>
+        </th>
+      </tr>
+      {% for alumnos in alumnos %}
+      <tr>
+        <td>{{ alumnos.nombre }}</td>
+        <td>{{ alumnos.apellido }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock contenido_base %}

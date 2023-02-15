@@ -1,0 +1,38 @@
+{% extends "alumnos/plantilla_base.html" %}
+
+{% block contenido_base %}
+
+<h2>
+Les dejamos nuestro nuevo post!! :)
+</h2>
+<br>
+<br>
+
+<h3>
+Titulo: {{post.title}}
+</h3>
+<br>
+<p>
+{{post.content}}
+<br>
+<br>
+Publicado por: {{post.author}}
+<br>
+<br>
+{% if post.header_image %}
+<img src="{{ post.header_image.url }}"width="400" height="400" class="center" >
+{% endif %}
+
+<br>
+Fecha de publicación: {{post.published}}
+<br>
+<br>
+Post Numero #: {{post.id}}
+<br>
+<br>
+
+<h4>
+<li class="list-inline-item"><a href="{% url 'pages' %}" class="btn btn-primary">Volver</a></li>
+</h4>
+
+{% endblock contenido_base %} 
